@@ -1,8 +1,8 @@
 """
-#╔══════════════════════════════════════════════════════════════════╗
-# ║          LATAM ASSISTANT - BOT OFICIAL DE DISCORD               ║
-#║          Versión 1.0 | Desarrollado para LATAM Airlines RP      ║
-#╚══════════════════════════════════════════════════════════════════╝
+╔══════════════════════════════════════════════════════════════════╗
+║          LATAM ASSISTANT - BOT OFICIAL DE DISCORD               ║
+║          Versión 1.0 | Desarrollado para LATAM Airlines RP      ║
+╚══════════════════════════════════════════════════════════════════╝
 
 Funciones:
   - /menu            → Menú principal interactivo
@@ -32,8 +32,13 @@ from typing import Optional
 #  CONFIGURACIÓN DEL BOT
 # ══════════════════════════════════════════════════════════════
 
-TOKEN""         # <-- Reemplaza con tu token de Discord
-GUILD_ID = 1476662919487033458                  # <-- Pon tu Guild ID aquí para sync rápido (int) o None para global
+TOKEN = os.environ.get("TOKEN")                    # Variable de entorno en Railway
+GUILD_ID = os.environ.get("1476662919487033458")             # Opcional: tu Guild ID en Railway
+if GUILD_ID:
+    GUILD_ID = int(GUILD_ID)
+
+if not TOKEN:
+    raise ValueError("❌ No se encontró la variable de entorno TOKEN. Agrégala en Railway > Variables.")
 
 intents = discord.Intents.default()
 intents.message_content = True
