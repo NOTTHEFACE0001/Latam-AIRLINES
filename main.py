@@ -32,8 +32,8 @@ from typing import Optional
 #  CONFIGURACIÓN DEL BOT
 # ══════════════════════════════════════════════════════════════
 
-TOKEN = "TU_TOKEN_AQUI"          # <-- Reemplaza con tu token de Discord
-GUILD_ID = None                   # <-- Pon tu Guild ID aquí para sync rápido (int) o None para global
+TOKEN""         # <-- Reemplaza con tu token de Discord
+GUILD_ID = 1476662919487033458                  # <-- Pon tu Guild ID aquí para sync rápido (int) o None para global
 
 intents = discord.Intents.default()
 intents.message_content = True
